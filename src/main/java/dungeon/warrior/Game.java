@@ -132,6 +132,8 @@ public class Game {
             
             if (monsterHits >= 10) {
                 System.out.println("Pobijedio si cudoviste!");
+                System.out.println("Zavrsio si Dungeon Warrior! Aj zdravo!");
+                System.exit(0);
                 monsterAlive = false;
             } else {
                 System.out.println(hasMace ? 
