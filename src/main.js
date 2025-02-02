@@ -14,5 +14,6 @@ commandInput.addEventListener("keydown", (e) => {
     container.innerHTML += `<p class="command-message">${command}</p>`;
     game.processCommand(command);
     commandInput.value = "";
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
   }
 });
