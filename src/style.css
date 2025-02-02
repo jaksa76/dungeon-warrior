@@ -29,3 +29,10 @@ input#command {
   background-color: #444;
   color: #e0e0e0;
 }
+
+.command-message {
+  background-color: #444;
+  color: #ffcc00;
+  padding: 5px 10px;
+  border-radius: 4px;
+}

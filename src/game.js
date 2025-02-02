@@ -1,5 +1,7 @@
 export class Game {
-  constructor() {
+  constructor(outputHandler) {
+    // Use the provided outputHandler or default to console.log
+    this.outputHandler = outputHandler || ((msg) => console.log(msg));
     this.astronautsAlive = false;
     this.monsterAlive = true;
     this.room = 1;
@@ -13,8 +15,7 @@ export class Game {
   }
   
   output(msg) {
-    const container = document.getElementById("game");
-    container.innerHTML += `<p>${msg}</p>`;
+    this.outputHandler(msg);
   }
   
   start() {
