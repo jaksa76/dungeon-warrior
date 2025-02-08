@@ -50,11 +50,6 @@ class EngineRoom extends Room {
     super("engine", "Nalaziš se u prostoriji za motore. Vrata su na zapadu.", { "zapad": "hallway" });
   }
   render(game) {
-    game.output("");
-    game.output("Uvod");
-    game.output("");
-    game.output("Bio si u svemirskom brodu i provjeravao si motore, kad odjednom je drugi svemirski brod napao tvoj brod. Pokušao si da izađeš, ali si pao u nesvijest.");
-    game.output("Probudio si se. Svemirski brod je bio potpuno uništen.");
     game.output(this.description);
   }
 }
@@ -179,9 +174,23 @@ export class Game {
     this.outputHandler(msg);
   }
   
+
+  displayIntro() {
+    this.output("");
+    this.output("Uvod");
+    this.output("");
+    this.output("Bio si u svemirskom brodu i provjeravao si motore, kad odjednom je drugi svemirski brod napao tvoj brod. Pokušao si da izađeš, ali si pao u nesvijest.");
+    this.output("Probudio si se. Svemirski brod je bio potpuno uništen.");
+    this.output("Koristi naredbe za kretanje i borbu.");
+    this.output("Naredbe: sjever, jug, istok, zapad, uzmi, napadni");
+    this.output("Srećno!");
+  }
+  
   start() {
+    this.displayIntro();
     this.render();
   }
+
   
   render() {
     const currentRoom = this.rooms[this.room];
